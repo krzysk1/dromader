@@ -1206,6 +1206,9 @@
             <[output][UniversalTime][]
                 <[string8][Input][Clock.OutputUniversalTime]>
             >
+            <[output][LocalTime][]
+                <[string8][Input][Clock.OutputLocalTime]>
+            >			
             <[output][AngleOfAttack][]
                 <[string8][Input][PitotTube.AngleOfAttack]>
             >
@@ -2501,11 +2504,18 @@
                 <[tmvector3d][Axis][0.907673 0.243210 -0.342020]>
                 <[tmvector3d][Pivot][-1.41 0.4520 0.7986]>
             >
+			// clock
+            <[graphics_input][LocalTime][]
+                <[uint32][InputID][LocalTime.Output]>
+            >
+            <[graphics_sec_to_hms][Watch][]
+                <[string8][Input][LocalTime.Output]>
+            >			
             <[hingedbodygraphics][clock_hour_3][]
                 <[string8][GeometryList][ hour ]>
                 <[uint32][PositionID][Fuselage.R]>
                 <[uint32][OrientationID][Fuselage.Q]>
-                <[uint32][AngleID][Clock.Output]>
+                <[string8][InputAngle][LocalTime.Output]>
                 <[float64][AngleMax][0.000145]>
                 <[tmvector3d][Axis][-0.907673 -0.243210 0.342020]>
                 <[tmvector3d][Pivot][-1.38 0.30 0.80]>
@@ -2514,7 +2524,7 @@
                 <[string8][GeometryList][ minutes ]>
                 <[uint32][PositionID][Fuselage.R]>
                 <[uint32][OrientationID][Fuselage.Q]>
-                <[uint32][AngleID][Clock.Output]>
+                <[string8][InputAngle][LocalTime.Output]>
                 <[float64][AngleMax][0.001745]>
                 <[tmvector3d][Axis][-0.907673 -0.243210 0.342020]>
                 <[tmvector3d][Pivot][-1.38 0.30 0.80]>
