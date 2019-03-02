@@ -811,17 +811,40 @@
                 <[string8][Input][MixElevatorTrim.Output]>
                 <[tmvector2d][Range][ -1.0 1.0 ]>
             >
-            <[input_default][AileronTrimInput][]
+            <[input_default][AileronTrim][]
                 <[string8][Input][Controls.AileronTrim]>
-                <[uint][Positions][101]>
+                <[uint][Positions][401]>
                 <[tmvector2d][Range][ -1.0 1.0 ]>
+                <[float64][Value][0.0]>
                 <[float64][Speed][0.1]>
+            >
+            <[mixlinear][AileronTrimmedMix][]
+                <[string8][Input0][AileronInput.Output]>
+                <[string8][Input1][AileronTrim.Output]>
+                <[float64][Weight0][1.0]>
+                <[float64][Weight1][0.2]>
+                <[float64][Offset][0.0]>
+            >
+            <[clamp][AileronTrimmed][]
+                <[string8][Input][AileronTrimmedMix.Output]>
+                <[tmvector2d][Range][ -1.0 1.0 ]>
             >
             <[input_default][RudderTrimInput][]
                 <[string8][Input][Controls.RudderTrim]>
                 <[uint][Positions][101]>
                 <[tmvector2d][Range][ -1.0 1.0 ]>
-                <[float64][Speed][0.1]>
+                <[float64][Speed][0.3]>
+            >
+            <[mixlinear][RudderTrimmedMix][]
+                <[string8][Input0][RudderInput.Output]>
+                <[string8][Input1][RudderTrimInput.Output]>
+                <[float64][Weight0][1.0]>
+                <[float64][Weight1][0.2]>
+                <[float64][Offset][0.0]>
+            >
+            <[clamp][RudderTrimmed][]
+                <[string8][Input][RudderTrimmedMix.Output]>
+                <[tmvector2d][Range][ -1.0 1.0 ]>
             >
 
             // Servos
@@ -870,7 +893,7 @@
                 <[string8][Input][ServoFlapPosition.Output]>
             >
             <[servoclassic][ServoLeftAileron][]
-                <[string8][Input][AileronInput.Output]>
+                <[string8][Input][AileronTrimmed.Output]>
                 <[float64][Speed][10.0]>
                 <[float64][P0][0.0]>
                 <[float64][P1][0.331613]>
@@ -881,7 +904,7 @@
                 <[string8][Input][ServoLeftAileron.Output]>
             >
             <[servoclassic][ServoRightAileron][]
-                <[string8][Input][AileronInput.Output]>
+                <[string8][Input][AileronTrimmed.Output]>
                 <[float64][Speed][10.0]>
                 <[float64][P0][0.0]>
                 <[float64][P1][-0.331613]>
@@ -936,7 +959,7 @@
                 <[string8][Input][ServoElevatorTrim.Output]>
             >
             <[servoclassic][ServoRudder][]
-                <[string8][Input][RudderInput.Output]>
+                <[string8][Input][RudderTrimmed.Output]>
                 <[float64][Speed][10.0]>
                 <[float64][P0][0.0]>
                 <[float64][P1][0.249066]>
@@ -1335,6 +1358,7 @@
             <[product][MainAirborneInput][]
                 <[string8][Inputs][Airborne.Output MainInput.Output]>
             >
+			
         // Engine
         
             <[servolinear][ThrottleCut][]
@@ -1344,61 +1368,117 @@
                 <[float64array][InputPosition][ 0.0 0.1 ]>
                 <[float64array][OutputPosition][ 0.0 1.0 ]>
             >
-			
-        // Lights
-        
             <[output_free][ThrottleCutOutput][]
                 <[string8][Input][ThrottleCut.Output]>
             >
-            <[input_default][LightInput][]
-                <[string8][Input][Controls.Flaps]>
+
+            // external lights start
+
+            // strobe lights
+            <[input_switch][StrobeLightSwitch][]
+                <[string8][Input][Controls.Lighting.Strobe]>
+                <[string8][Events][ SwitchSound.Trigger ]>
+                <[string8][EventsRelease][ SwitchSound.Trigger ]>
+                <[float64][Value][1.0]>
             >
-            <[servolinear][LandingLightSwitch][]
-                <[string8][Input][LightInput.Output]>
-                <[float64][Position][0.0]>
-                <[float64][OutputSpeed][2]>
-                <[float64array][InputPosition][ 0.0 0.1 ]>
-                <[float64array][OutputPosition][ 0.0 1.0 ]>
+            <[output][StrobeLightOn][]
+                <[string8][Input][StrobeLightSwitch.Output]>
             >
-            <[output_free][LandingLightSwitchOutput][]
-                <[string8][Input][LandingLightSwitch.Output]>
+
+            // navigation lights
+            <[input_switch][NavigationLightSwitch][]
+                <[string8][Input][Controls.Lighting.Navigation]>
+                <[string8][Events][ SwitchSound.Trigger ]>
+                <[string8][EventsRelease][ SwitchSound.Trigger ]>
+                <[float64][Value][0.0]>
             >
-            <[servolinear][TaxiLightSwitch][]
-                <[string8][Input][RightWheelHull.Speed]>
-                <[float64][Position][0.0]>
-                <[float64][OutputSpeed][2]>
-                <[float64array][InputPosition][ -0.6 -0.5 ]>
-                <[float64array][OutputPosition][ 1.0 0.0 ]>
-            >
-            <[output_free][TaxiLightSwitchOutput][]
-                <[string8][Input][TaxiLightSwitch.Output]>
-            >
-            <[servolinear][BeaconSwitch][]
-                <[string8][Input][MainGroundInput.Output]>
-                <[float64][Position][1.0]>
-                <[float64][OutputSpeed][2]>
-                <[float64array][InputPosition][ 0.1 0.20 ]>
-                <[float64array][OutputPosition][ 1.0 0.0 ]>
-            >
-            <[output_free][BeaconSwitchOutput][]
-                <[string8][Input][BeaconSwitch.Output]>
-            >
-            <[servolinear][NavLightSwitch][]
-                <[string8][Input][MainGroundInput.Output]>
-                <[float64][Position][1.0]>
-                <[float64][OutputSpeed][2]>
-                <[float64array][InputPosition][ 0.25 0.30 ]>
-                <[float64array][OutputPosition][ 1 0 ]>
-            >
-            <[output_free][NavLightSwitchOutput][]
-                <[string8][Input][NavLightSwitch.Output]>
-            >
-            <[output][StrobeSwitch][]
-                <[string8][Input][Airborne.Output]>
+            <[output][NavigationLightOn][]
+                <[string8][Input][NavigationLightSwitch.Output]>
             >
 			
-        // Switches
-        
+            // beacon light
+            <[input_switch][BeaconLightSwitch][]
+                <[string8][Input][Controls.Lighting.Beacon]>
+                <[string8][Events][ SwitchSound.Trigger ]>
+                <[string8][EventsRelease][ SwitchSound.Trigger ]>
+                <[float64][Value][0.0]>
+            >
+            <[output][BeaconLightOn][]
+                <[string8][Input][BeaconLightSwitch.Output]>
+            >
+			
+            // landing lights
+            <[input_switch][LandingLightSwitch][]
+                <[string8][Input][Controls.Lighting.Landing]>
+                <[string8][Events][ SwitchSound.Trigger ]>
+                <[string8][EventsRelease][ SwitchSound.Trigger ]>
+                <[float64][Value][0.0]>
+            >
+            <[output][LandingLightOn][]
+                <[string8][Input][LandingLightSwitch.Output]>
+            >
+			
+            // taxi lights
+            <[input_switch][TaxiLightSwitch][]
+                <[string8][Input][Controls.Lighting.Taxi]>
+                <[string8][Events][ SwitchSound.Trigger ]>
+                <[string8][EventsRelease][ SwitchSound.Trigger ]>
+                <[float64][Value][0.0]>
+            >
+            <[output][TaxiLightOn][]
+                <[string8][Input][TaxiLightSwitch.Output]>
+            >
+			
+            // external lighting end
+
+
+            // animations start
+
+            // canopy
+
+            <[servolinear][ServoDoor][]
+                <[string8][Input][MainGroundInput.Output]>
+                <[float64][Position][0.0]>
+                <[float64][OutputSpeed][0.8]>
+                <[float64array][InputPosition][ 0.4 0.5 0.75 0.8]>
+                <[float64array][OutputPosition][ 0 1 1 0 ]>
+            >
+            <[output_free][ServoDoorOutput][]
+                <[string8][Input][ServoDoor.Output]>
+            >
+            <[servolinear][ServoDoorHandle][]
+                <[string8][Input][ServoDoor.Output]>
+                <[float64][OutputSpeed][2.0]>
+                <[float64][Position][0.0]>
+                <[float64array][InputPosition][ 0.0  0.15  1.0 ]>
+                <[float64array][OutputPosition][ 0.0  1.0 1.0 ]>
+            >
+            <[output_free][ServoDoorHandleOutput][]
+                <[string8][Input][ServoDoorHandle.Output]>
+            >
+            <[servolinear][ServoDoor2][]
+                <[string8][Input][MainGroundInput.Output]>
+                <[float64][Position][0.0]>
+                <[float64][OutputSpeed][0.6]>
+                <[float64array][InputPosition][ 0.6 0.75 0.9 ]>
+                <[float64array][OutputPosition][ 0 1 0 ]>
+            >
+            <[output_free][ServoDoor2Output][]
+                <[string8][Input][ServoDoor2.Output]>
+            >
+            <[servolinear][ServoDoor2Handle][]
+                <[string8][Input][ServoDoor2.Output]>
+                <[float64][OutputSpeed][2.0]>
+                <[float64][Position][0.0]>
+                <[float64array][InputPosition][ 0.0  0.15  1.0 ]>
+                <[float64array][OutputPosition][ 0.0  1.0 1.0 ]>
+            >
+            <[output_free][ServoDoor2HandleOutput][]
+                <[string8][Input][ServoDoor2Handle.Output]>
+            >
+						
+            // switches
+			
             <[servolinear][BatterySwitch][]
                 <[string8][Input][MainGroundInput.Output]>
                 <[float64][Position][1.0]>
@@ -1468,53 +1548,22 @@
                 <[float64][Position][0.0]>
                 <[float64array][InputPosition][ 0.0 1.0 ]>
                 <[float64array][OutputPosition][ -1.0 1.0 ]>
-            >
-			
-        // Doors
+            >			
         
             <[output_free][ServoTailWheelOutput][]
                 <[string8][Input][ServoTailWheel.Output]>
             >
-            <[servolinear][ServoDoor][]
-                <[string8][Input][MainGroundInput.Output]>
-                <[float64][Position][0.0]>
-                <[float64][OutputSpeed][0.8]>
-                <[float64array][InputPosition][ 0.4 0.5 0.75 0.8]>
-                <[float64array][OutputPosition][ 0 1 1 0 ]>
+			
+            // animations end
+
+            // sound events
+            <[event_sound][ButtonSound][]
             >
-            <[output_free][ServoDoorOutput][]
-                <[string8][Input][ServoDoor.Output]>
+            <[event_sound][SwitchSound][]
             >
-            <[servolinear][ServoDoorHandle][]
-                <[string8][Input][ServoDoor.Output]>
-                <[float64][OutputSpeed][2.0]>
-                <[float64][Position][0.0]>
-                <[float64array][InputPosition][ 0.0  0.15  1.0 ]>
-                <[float64array][OutputPosition][ 0.0  1.0 1.0 ]>
+            <[event_sound][KnobTurnSound][]
             >
-            <[output_free][ServoDoorHandleOutput][]
-                <[string8][Input][ServoDoorHandle.Output]>
-            >
-            <[servolinear][ServoDoor2][]
-                <[string8][Input][MainGroundInput.Output]>
-                <[float64][Position][0.0]>
-                <[float64][OutputSpeed][0.6]>
-                <[float64array][InputPosition][ 0.6 0.75 0.9 ]>
-                <[float64array][OutputPosition][ 0 1 0 ]>
-            >
-            <[output_free][ServoDoor2Output][]
-                <[string8][Input][ServoDoor2.Output]>
-            >
-            <[servolinear][ServoDoor2Handle][]
-                <[string8][Input][ServoDoor2.Output]>
-                <[float64][OutputSpeed][2.0]>
-                <[float64][Position][0.0]>
-                <[float64array][InputPosition][ 0.0  0.15  1.0 ]>
-                <[float64array][OutputPosition][ 0.0  1.0 1.0 ]>
-            >
-            <[output_free][ServoDoor2HandleOutput][]
-                <[string8][Input][ServoDoor2Handle.Output]>
-            >
+						
         >
         <[pointer_list_tmgraphics][GraphicObjects][]
 		
@@ -1539,6 +1588,8 @@
                 <[uint32][PositionID][RightWing.R]>
                 <[uint32][OrientationID][RightWing.Q]>
             >
+			
+			// propeller
             <[propellergraphics][Propeller][]
                 <[string8][GeometryList][ girohelice ]>
                 <[uint32][PositionID][Fuselage.R]>
@@ -1610,43 +1661,11 @@
                 <[float64][Radius][1.658112]>
                 <[string8][InputPitch][0.0]>
             >			
-            <[graphics_input][NavLightSwitch][]
-                <[uint32][InputID][NavLightSwitch.Output]>
-            >
-            <[graphics_input][StrobeSwitch][]
-                <[uint32][InputID][StrobeSwitch.Output]>
-            >
-            <[graphics_input][UniversalTime][]
-                <[uint32][InputID][UniversalTime.Output]>
+			
+			// landing lights	
+            <[graphics_input][LandingLightOn][]
+                <[uint32][InputID][LandingLightOn.Output]>
             >			
-            <[graphics_flasher][StrobeFlasher][]
-                <[string8][Function][DoublePulse]>
-                <[string8][InputTime][UniversalTime.Output]>				
-                <[float64][Period][2.0]>
-            >
-            <[graphics_product][StrobeLight][]
-                <[string8][Input0][StrobeSwitch.Output]>
-                <[string8][Input1][StrobeFlasher.Output]>
-            >
-            <[graphics_input][BeaconSwitch][]
-                <[uint32][InputID][BeaconSwitch.Output]>
-            >
-            <[graphics_flasher][BeaconFlasher][]
-                <[string8][Function][Triangle]>
-                <[string8][InputTime][UniversalTime.Output]>				
-                <[float64][Period][2.493]>
-                <[float64][Minimum][0.1]>
-            >
-            <[graphics_product][BeaconLight][]
-                <[string8][Input0][BeaconSwitch.Output]>
-                <[string8][Input1][BeaconFlasher.Output]>
-            >
-            <[graphics_input][LandingLightSwitch][]
-                <[uint32][InputID][LandingLightSwitch.Output]>
-            >
-            <[graphics_input][TaxiLightSwitch][]
-                <[uint32][InputID][TaxiLightSwitch.Output]>
-            >
             <[graphics_pointlight][landing_light_0][]
                 <[uint32][PositionID][LeftWing.R]>
                 <[uint32][OrientationID][LeftWing.Q]>
@@ -1657,19 +1676,7 @@
                 <[float64][Size][0.1]>
                 <[tmvector3d][Color][ 1.0 0.9 0.8 1.0 ]>
                 <[float64][Brightness][7.0]>
-                <[string8][InputModulation][LandingLightSwitch.Output]>
-            >
-            <[graphics_pointlight][landing_light_1][]
-                <[uint32][PositionID][LeftWing.R]>
-                <[uint32][OrientationID][LeftWing.Q]>
-                <[tmvector3d][R0][0.493676 5.67058 -0.121329]>
-                <[tmvector3d][X0][ 0.9 0.0 -0.1 ]>
-                <[float64][ConeCenter][0.9]>
-                <[float64][ConeCutoff][0.7]>
-                <[float64][Size][0.1]>
-                <[tmvector3d][Color][ 1.0 0.9 0.8 1.0 ]>
-                <[float64][Brightness][7.0]>
-                <[string8][InputModulation][TaxiLightSwitch.Output]>
+                <[string8][InputModulation][LandingLightOn.Output]>
             >
             <[graphics_pointlight][landing_light_2][]
                 <[uint32][PositionID][RightWing.R]>
@@ -1681,9 +1688,26 @@
                 <[float64][Size][0.1]>
                 <[tmvector3d][Color][ 1.0 0.9 0.8 1.0 ]>
                 <[float64][Brightness][7.0]>
-                <[string8][InputModulation][LandingLightSwitch.Output]>
+                <[string8][InputModulation][LandingLightOn.Output]>
             >
-            <[graphics_pointlight][landing_light_3][]
+			
+			// taxi lights	
+            <[graphics_input][TaxiLightOn][]
+                <[uint32][InputID][TaxiLightOn.Output]>
+            >			
+            <[graphics_pointlight][Taxi_light_1][]
+                <[uint32][PositionID][LeftWing.R]>
+                <[uint32][OrientationID][LeftWing.Q]>
+                <[tmvector3d][R0][0.493676 5.67058 -0.121329]>
+                <[tmvector3d][X0][ 0.9 0.0 -0.1 ]>
+                <[float64][ConeCenter][0.9]>
+                <[float64][ConeCutoff][0.7]>
+                <[float64][Size][0.1]>
+                <[tmvector3d][Color][ 1.0 0.9 0.8 1.0 ]>
+                <[float64][Brightness][7.0]>
+                <[string8][InputModulation][TaxiLightOn.Output]>
+            >
+            <[graphics_pointlight][Taxi_light_3][]
                 <[uint32][PositionID][RightWing.R]>
                 <[uint32][OrientationID][RightWing.Q]>
                 <[tmvector3d][R0][0.493676 -5.67058 -0.121329]>
@@ -1693,8 +1717,26 @@
                 <[float64][Size][0.1]>
                 <[tmvector3d][Color][ 1.0 0.9 0.8 1.0 ]>
                 <[float64][Brightness][7.0]>
-                <[string8][InputModulation][TaxiLightSwitch.Output]>
+                <[string8][InputModulation][TaxiLightOn.Output]>
             >
+			
+			// beacon light
+            <[graphics_input][UniversalTime][]
+                <[uint32][InputID][UniversalTime.Output]>
+            >				
+            <[graphics_flasher][BeaconFlasher][]
+                <[string8][Function][Triangle]>
+                <[string8][InputTime][UniversalTime.Output]>
+                <[float64][Period][2.493]>
+                <[float64][Minimum][0.1]>
+            >			
+            <[graphics_input][BeaconLightOn][]
+                <[uint32][InputID][BeaconLightOn.Output]>
+            >			
+            <[graphics_product][BeaconSwitched][]
+                <[uint32][Input0][BeaconFlasher.Output]>
+                <[uint32][Input1][BeaconLightOn.Output]>
+            >			
             <[graphics_pointlight][beacon_rotate_light_1][]
                 <[uint32][PositionID][Fuselage.R]>
                 <[uint32][OrientationID][Fuselage.Q]>
@@ -1703,7 +1745,7 @@
                 <[float64][ConeCenter][-0.5]>
                 <[float64][ConeCutoff][-0.7]>
                 <[tmvector3d][Color][ 1.0 0.4 0.0 1.0 ]>
-                <[string8][InputModulation][BeaconLight.Output]>
+                <[string8][InputModulation][BeaconSwitched.Output]>
                 <[float64][Size][0.03]>
                 <[float64][Brightness][4.0]>
             >
@@ -1715,51 +1757,70 @@
                 <[float64][ConeCenter][-0.5]>
                 <[float64][ConeCutoff][-0.7]>
                 <[tmvector3d][Color][ 1.0 0.4 0.0 1.0 ]>
-                <[string8][InputModulation][BeaconLight.Output]>
+                <[string8][InputModulation][BeaconSwitched.Output]>
                 <[float64][Size][0.03]>
                 <[float64][Brightness][4.0]>
             >
-            <[graphics_pointlight][nav_left_light_3][]
-                <[uint32][PositionID][LeftWing.R]>
-                <[uint32][OrientationID][LeftWing.Q]>
-                <[tmvector3d][R0][0.0492 8.8452 0.2429]>
-                <[tmvector3d][X0][ 0.7 0.7 0.0 ]>
-                <[tmvector3d][Color][ 1.0 0.3 0.1 1.0 ]>
-                <[float64][Brightness][ 2.0 ]>
-                <[string8][InputModulation][NavLightSwitch.Output]>
-            >
+
+			// strobe lights		
+            <[graphics_flasher][StrobeFlasher][]
+                <[string8][Function][DoublePulse]>
+                <[string8][InputTime][UniversalTime.Output]>    
+                <[float64][Period][2.0]>
+            >			
+            <[graphics_input][StrobeLightOn][]
+                <[uint32][InputID][StrobeLightOn.Output]>
+            >			
+            <[graphics_product][StrobeSwitched][]
+                <[uint32][Input0][StrobeFlasher.Output]>
+                <[uint32][Input1][StrobeLightOn.Output]>
+            >			
             <[graphics_pointlight][strobe_light_4][]
                 <[uint32][PositionID][LeftWing.R]>
                 <[uint32][OrientationID][LeftWing.Q]>
                 <[tmvector3d][R0][-0.0618 8.8624 0.2413]>
                 <[tmvector3d][X0][ 0.0 1.0 0.0 ]>
-                <[string8][InputModulation][StrobeLight.Output]>
+                <[string8][InputModulation][StrobeSwitched.Output]>
                 <[tmvector3d][Color][ 0.7 0.7 1.0 1.0 ]>
                 <[float64][Size][0.03]>
                 <[float64][ConeCenter][0.0]>
                 <[float64][ConeCutoff][-0.5]>
                 <[float64][Brightness][10.0]>
-            >
-            <[graphics_pointlight][nav_right_light_5][]
-                <[uint32][PositionID][RightWing.R]>
-                <[uint32][OrientationID][RightWing.Q]>
-                <[tmvector3d][R0][0.0492 -8.8460 0.2429]>
-                <[tmvector3d][X0][ 0.7 -0.7 0.0 ]>
-                <[tmvector3d][Color][ 0.2 0.7 0.1 1.0 ]>
-                <[float64][Brightness][ 2.0 ]>
-                <[string8][InputModulation][NavLightSwitch.Output]>
             >
             <[graphics_pointlight][strobe_light_6][]
                 <[uint32][PositionID][RightWing.R]>
                 <[uint32][OrientationID][RightWing.Q]>
                 <[tmvector3d][R0][-0.0618 -8.8632 0.2413]>
                 <[tmvector3d][X0][ 0.0 -1.0 0.0 ]>
-                <[string8][InputModulation][StrobeLight.Output]>
+                <[string8][InputModulation][StrobeSwitched.Output]>
                 <[tmvector3d][Color][ 0.7 0.7 1.0 1.0 ]>
                 <[float64][Size][0.03]>
                 <[float64][ConeCenter][0.0]>
                 <[float64][ConeCutoff][-0.5]>
                 <[float64][Brightness][10.0]>
+            >
+			
+            // navigation lights
+            <[graphics_input][NavigationLightOn][]
+                <[uint32][InputID][NavigationLightOn.Output]>
+            >			
+            <[graphics_pointlight][LeftWingTipLightRed][]
+                <[uint32][PositionID][LeftWing.R]>
+                <[uint32][OrientationID][LeftWing.Q]>
+                <[tmvector3d][R0][0.0492 8.8452 0.2429]>
+                <[tmvector3d][X0][ 0.7 0.7 0.0 ]>
+                <[tmvector3d][Color][ 1.0 0.3 0.1 1.0 ]>
+                <[float64][Brightness][ 2.0 ]>
+                <[string8][InputModulation][NavigationLightOn.Output]>
+            >
+            <[graphics_pointlight][RightWingTipLightGreen][]
+                <[uint32][PositionID][RightWing.R]>
+                <[uint32][OrientationID][RightWing.Q]>
+                <[tmvector3d][R0][0.0492 -8.8460 0.2429]>
+                <[tmvector3d][X0][ 0.7 -0.7 0.0 ]>
+                <[tmvector3d][Color][ 0.2 0.7 0.1 1.0 ]>
+                <[float64][Brightness][ 2.0 ]>
+                <[string8][InputModulation][NavigationLightOn.Output]>
             >
             <[graphics_input][RudderInput][]
                 <[uint32][InputID][ServoRudder.Output]>
@@ -1776,9 +1837,11 @@
                 <[tmvector3d][X0][ -1.0 0.0 0.0 ]>
                 <[tmvector3d][Color][ 0.7 0.7 1.0 1.0 ]>
                 <[float64][Brightness][ 2.0 ]>
-                <[string8][InputModulation][NavLightSwitch.Output]>
+                <[string8][InputModulation][NavigationLightOn.Output]>
                 <[string8][InputTransform][RudderRotate.Output]>
             >
+			
+			//
             <[hingedbodygraphics][generatorSwitch02_4][]
                 <[string8][GeometryList][ switch02 ]>
                 <[uint32][PositionID][Fuselage.R]>
