@@ -3,28 +3,28 @@
         <[int][Version][210]>
         <[vec32array][ContactSpheres][ (-5.385 0.0 -0.554 0.208) (0.513 1.777 -1.634 0.419) (0.513 -1.777 -1.634 0.419) ]>
         <[string8][DisplayName][PZL M18B Dromader]>
-        <[string8][DescriptionTextEN][The PZL-Mielec M-18 Dromader (Polish: "Dromedary") is a single engine agricultural aircraft that is manufactured by PZL-Mielec in Poland. The aircraft is used mainly as a cropduster or firefighting machine. Made by Krzysztof Kaniewski. 3D model by Pavel Cueto, Fernando Espinosa.]>
-		//Performance: Never exceed speed: 280 km/h (151 knots, 174 mph) Maximum speed: 230 km/h (124 knots, 143 mph) Stall speed: 108 km/h (59 knots, 68mph) (flaps down) Range: 970 km (523 nmi, 602 miles) Service ceiling: 6,500 m (21,320 ft) Rate of climb: 6.5 m/s (1,280 ft/min)
+        <[string8][DescriptionTextEN][The PZL-Mielec M-18 Dromader (Polish: "Dromedary") is a single engine agricultural aircraft that is manufactured by PZL-Mielec in Poland. The aircraft is used mainly as a cropduster or firefighting machine. 
+		Made by Krzysztof Kaniewski. Original 3D model created by pby Pavel Cueto, Fernando Espinosa.]>
 		<[float64][WingSpan][17.7]>
 		<[float64][Mass][2982]>
-		<[float64][MaximumSpeed][75.5]>
+		<[float64][MaximumSpeed][62.0]>
 		<[float64][MinimumSpeed][29.5]>
         <[float64][ApproachSpeed][33.3]>
         <[float64][CruiseSpeed]  [55.6]>
 		<[tmvector2d][NormalSpeedRange][ 29.5 59.0 ]>
 		<[tmvector2d][CautionSpeedRange][ 59.0 75.5 ]>
 		<[tmvector2d][FlapSpeedRange][ 29.5 49.0 ]>
-        <[float64][MaximumAltitude][4715.0]>
+        <[float64][MaximumAltitude][6500.0]>
         <[float64][CruiseAltitude] [1826.0]>
-        <[float64][QSpan][8.74]>
-        <[float64][QMass][1000.0]>
-        <[float64][QSpeed][86.0]>
-        <[float64][QPower][118000.0]>
+        <[float64][QSpan][17.7]>
+        <[float64][QMass][5300.0]>
+        <[float64][QSpeed][62.0]>
+        <[float64][QPower][746000.0]>
         <[float64][QThrust][0.0]>
-        <[float64][QRange][1085000.0]>
+        <[float64][QRange][970000.0]>
         <[float64][QRatio][0.0]>
-        <[float64][QBuild][1300]>
-        <[float64][QVirgin][1972]>
+        <[float64][QBuild][759]>
+        <[float64][QVirgin][1978]>
 		<[bool][Airplane][true]>
 		<[bool][Flaps][true]>
 		<[string8][Pilot][pilot_peter]>	
