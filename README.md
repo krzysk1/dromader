@@ -14,6 +14,4 @@ Installation
 
 Tips:
 
-Use GliderEngine button to turn off/on engine and open/close doors.
-
 There are extra liveries in 'liveries' folder: CONAF's (National Forest Corporation, Chile) and Red.
