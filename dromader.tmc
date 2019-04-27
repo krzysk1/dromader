@@ -4,7 +4,7 @@
         <[vec32array][ContactSpheres][ (-5.385 0.0 -0.554 0.208) (0.513 1.777 -1.634 0.419) (0.513 -1.777 -1.634 0.419) ]>
         <[string8][DisplayName][PZL M18B Dromader]>
         <[string8][DescriptionTextEN][The PZL-Mielec M-18 Dromader (Polish: "Dromedary") is a single engine agricultural aircraft that is manufactured by PZL-Mielec in Poland. The aircraft is used mainly as a cropduster or firefighting machine. 
-		Made by Krzysztof Kaniewski. Original 3D model created by pby Pavel Cueto, Fernando Espinosa.]>
+For Aerofly FS2 made by Krzysztof Kaniewski. Original 3D model created by pby Pavel Cueto, Fernando Espinosa.]>
 		<[float64][WingSpan][17.7]>
 		<[float64][Mass][2982]>
 		<[float64][MaximumSpeed][62.0]>
