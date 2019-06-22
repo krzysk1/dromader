@@ -2,10 +2,10 @@
 
 	//-------------------------------------
 	// Plane: PZL M-18 Dromader
-	// Compilation: krzysk(at)wp.pl
+	// Converted from FlightGear by krzysk(at)wp.pl
 	// Original 3D model: Pavel Cueto, Fernando Espinosa
 	// Specification: http://www.polot.net/?p=b214
-	// Date: Tue Jan 06 2015; Mar 2019
+	// Date: Tue Jan 06 2015; Apr 2019
 	//-------------------------------------
 
     <[modelmanager][][]
@@ -19,7 +19,6 @@
                 <[string8][Airspeed][AirspeedIndicator.IndicatedAirspeed]>
                 <[string8][BrakePosition][LeftBrakeInput.Output]>
                 <[string8][FlapPosition][FlapsInput.Output]>
-                <[tmvector2d][FlapPositions][(0.0 0.00) (0.50 0.15) (1.0 0.30)]>
             >
 
             // Cameras
@@ -869,7 +868,36 @@
                 <[string8][Input][Controls.Flaps]>
                 <[uint][Positions][3]>
                 <[float64][Value][0.0]>					
-            > 
+            >
+            <[gated_lever][FlapLever][]
+                <[string8][Input][FlapsInput.Output]>
+                <[float64][Gates][ 0.0 0.50 1.0 ]>
+                <[float64][CommandMoveAcceleration][20.0]>
+                <[float64][CommandMoveStrength]    [8.0]>
+            >
+            <[output_free][FlapLeverOutput][]
+                <[string8][Input][FlapLever.Output]>
+            >			
+            <[event_sound][FlapLeverPullSound][]
+            >
+            <[event_sound][FlapLeverReleaseSound][]
+            >
+            <[event_edge][FlapLever_UnlockedSound][]
+                <[string8][Input][FlapLever.OutputUnlocked]>
+                <[string8][Events][ FlapLeverPullSound.Trigger ]>
+                <[bool][Rising][true]>
+                <[bool][Falling][false]>
+                <[float64][Value][0.0]>
+                <[float64][Threshold][0.97]>
+            >
+            <[event_edge][FlapLever_ReleaseSound][]
+                <[string8][Input][FlapLever.OutputUnlocked]>
+                <[string8][Events][ FlapLeverReleaseSound.Trigger ]>
+                <[bool][Rising][false]>
+                <[bool][Falling][true]>
+                <[float64][Value][0.0]>
+                <[float64][Threshold][0.1]>
+            >			
             <[linear_interpolation][FlapsMapping][]
                 <[string8][Input][FlapsInput.Output]>
                 <[tmvector2d][Map][ (0.0 0.0) (0.5 0.261799) (1.0 0.523599) ]>

@@ -18,3 +18,5 @@ Tips:
 There are extra liveries in folders: CONAF's (National Forest Corporation, Chile) and Red.
 
 All resources are available here: https://github.com/FGMEMBERS/Dromader
+
+Aircraft Technical Data & Specifications: http://www.airliners.net/aircraft-data/pzl-mielec-m-18-dromader/318
