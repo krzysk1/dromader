@@ -278,7 +278,7 @@
             >
 			// propeller speed
             <[control_input][PropellerSpeedTravel][2]
-				<[uint32][InputID][ServoPropRPM.Output]>	
+				<[uint32][InputID][ServoPropSpeedPosition.Output]>	
             >
             <[control_rotation][PropellerSpeedTransform][]
                 <[string8][Input][PropellerSpeedTravel.Output]>
@@ -349,7 +349,7 @@
                 <[float64][Radius][0.017]>
                 <[float64][Length][0.057]>
             >	
-			// Parking brake lever
+			// parking brake lever
             <[control_input][BrakeHandleInput][2]
 				<[uint32][InputID][ParkingBrake.Output]>
                 <[float64][Scaling][0.436332]>				
