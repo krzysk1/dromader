@@ -389,7 +389,7 @@
                 <[float64][ClAlpha][6.016057]>
                 <[float64][CdAlpha][0.744845]>
                 <[float64][CmAlpha][0.0]>
-                <[float64][ClFlap][2.1]>
+                <[float64][ClFlap][2.5]>
                 <[float64][CdFlap][0.005]>
                 <[float64][CmFlap][-0.2]>
                 <[float64][Cd0Base][0.005]>
@@ -1432,7 +1432,6 @@
             <[output][StrobeLightOn][]
                 <[string8][Input][StrobeLightSwitch.Output]>
             >
-
             // navigation lights
             <[input_switch][NavigationLightSwitch][]
                 <[string8][Input][Controls.Lighting.Navigation]>
@@ -1442,8 +1441,7 @@
             >
             <[output][NavigationLightOn][]
                 <[string8][Input][NavigationLightSwitch.Output]>
-            >
-			
+            >			
             // beacon light
             <[input_switch][BeaconLightSwitch][]
                 <[string8][Input][Controls.Lighting.Beacon]>
@@ -1453,8 +1451,7 @@
             >
             <[output][BeaconLightOn][]
                 <[string8][Input][BeaconLightSwitch.Output]>
-            >
-			
+            >		
             // landing lights
             <[input_switch][LandingLightSwitch][]
                 <[string8][Input][Controls.Lighting.Landing]>
@@ -1464,8 +1461,7 @@
             >
             <[output][LandingLightOn][]
                 <[string8][Input][LandingLightSwitch.Output]>
-            >
-			
+            >			
             // taxi lights
             <[input_switch][TaxiLightSwitch][]
                 <[string8][Input][Controls.Lighting.Taxi]>
@@ -1476,8 +1472,7 @@
             <[output][TaxiLightOn][]
                 <[string8][Input][TaxiLightSwitch.Output]>
             >
-
-            // Panel lights
+            // instruments lights
             <[input_switch][InstrumentsLightSwitch][]
                 <[string8][Input][Controls.Lighting.Instruments]>
                 <[string8][Events][ SwitchSound.Trigger ]>
@@ -1486,9 +1481,8 @@
             >
             <[output][InstrumentsLightOn][]
                 <[string8][Input][InstrumentsLightSwitch.Output]>
-            >
-			
-            // Panel lights
+            >			
+            // panel lights
             <[input_switch][PanelLightSwitch][]
                 <[string8][Input][Controls.Lighting.Panel]>
                 <[string8][Events][ SwitchSound.Trigger ]>
