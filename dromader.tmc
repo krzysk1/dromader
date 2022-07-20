@@ -1,34 +1,35 @@
 ﻿<[file][][]
     <[object][][]
-        <[int][Version][210]>
+        <[int][Version][220]>
         <[vec32array][ContactSpheres][ (-5.385 0.0 -0.554 0.208) (0.513 1.777 -1.634 0.419) (0.513 -1.777 -1.634 0.419) ]>
-        <[string8][DisplayName][PZL M18B Dromader]>
-        <[string8][DescriptionTextEN][The PZL-Mielec M-18 Dromader (Polish: "Dromedary") is a single engine agricultural aircraft that is manufactured by PZL-Mielec in Poland. The aircraft is used mainly as a cropduster or firefighting machine. 
-For Aerofly FS2 made by Krzysztof Kaniewski. Original 3D model created by pby Pavel Cueto, Fernando Espinosa.]>
+        <[string8][ICAO][M18]>
+        <[string8][DisplayName][PZL Dromader]>
+        <[string8][DisplayNameFull][PZL-Mielec M18B Dromader]>
+        <[localized_text_list][Descriptions][]
+            <[localized_text][][]
+                <[string8][Language][en]>
+                <[string8][Text][The PZL-Mielec M-18 Dromader (Polish: "Dromedary") is a single engine agricultural aircraft that is manufactured by PZL-Mielec in Poland. The aircraft is used mainly as a cropduster or firefighting machine. For Aerofly FS4 made by Krzysztof Kaniewski. Original 3D model created by pby Pavel Cueto, Fernando Espinosa.]>
+            >
+        >
 		<[float64][WingSpan][17.7]>
-		<[float64][Mass][2982]>
-		<[float64][MaximumSpeed][62.0]>
-		<[float64][MinimumSpeed][29.5]>
-        <[float64][ApproachSpeed][33.3]>
-        <[float64][CruiseSpeed]  [55.6]>
-		<[tmvector2d][NormalSpeedRange][ 29.5 59.0 ]>
-		<[tmvector2d][CautionSpeedRange][ 59.0 75.5 ]>
-		<[tmvector2d][FlapSpeedRange][ 29.5 49.0 ]>
+		<[float64][MaximumAirspeed][62.0]>
+		<[float64][MinimumAirspeed][29.5]>
+        <[float64][ApproachAirspeed][33.3]>
+        <[float64][CruiseAirspeed]  [55.6]>
+		<[tmvector2d][NormalAirspeedRange][ 29.5 59.0 ]>
+		<[tmvector2d][CautionAirspeedRange][ 59.0 75.5 ]>
+		<[tmvector2d][FlapAirspeedRange][ 29.5 49.0 ]>
         <[float64][MaximumAltitude][6500.0]>
         <[float64][CruiseAltitude] [1826.0]>
-        <[float64][QSpan][17.7]>
-        <[float64][QMass][5300.0]>
-        <[float64][QSpeed][62.0]>
-        <[float64][QPower][746000.0]>
-        <[float64][QThrust][0.0]>
-        <[float64][QRange][970000.0]>
-        <[float64][QRatio][0.0]>
-        <[float64][QBuild][759]>
-        <[float64][QVirgin][1978]>
+        <[float64][MaximumTakeoffMass][5300.0]>
+        <[float64][EnginePower][746000.0]>
+        <[float64][MaximumRange][970000.0]>
+        <[uint][UnitsBuilt][759]>
+        <[uint][EngineCount][1]>
+        <[uint][Year][1978]>
         <[tmvector2d][FlapSettings][ (0.0 0.0) (0.5 0.261799) (1.0 0.523599) ]>
         <[string8][FlapQualifier][]>		
-		<[bool][Airplane][true]>
-		<[bool][Flaps][true]>
+        <[string8][Tags][ airplane general_aviation piston gear tailgear flaps ]>
 		<[string8][Pilot][pilot_peter]>	
     >
 >
