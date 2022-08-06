@@ -17,7 +17,7 @@
 
             <[telemetry][Telemetry][]
                 <[string8][Body][Fuselage]>
-                <[tmvector3d][LookAtPosition][ 0.0 0.0 0.0 ]>				
+                <[tmvector3d][LookAtPosition][ 0.0 0.0 0.0 ]>
             >
 
             // Cameras
@@ -625,7 +625,7 @@
                 <[float64][DownWashPercentage][1.0]>
                 <[float64][GroundEffectFactor][1.0]>
                 <[float64][GroundEffectScale][1.0]>
-            >		
+            >
             <[aerowing][LeftStabilizerAero][]
                 <[string8][Body][Fuselage]>
                 <[float64][Span][2.673096]>
@@ -761,6 +761,11 @@
             >
             <[output_free][ElevatorTrimInputOutput][]
                 <[string8][Input][ElevatorTrimInput.Output]>
+            >
+            <[sender][SenderPitchTrimPosition][]
+                <[string8][Input][ElevatorTrimInput.Output]>
+                <[string8][Message][Aircraft.PitchTrim]>
+                <[string8][Qualifiers][ normalized ]>
             >
             <[mixlinear][MixElevatorTrim][]
                 <[string8][Input0][ElevatorInput.Output]>
@@ -1074,7 +1079,7 @@
             >
             // magnetos
             <[input_discrete_momentary][Magnetos][]
-                <[string8][Message][Controls.Magnetos]>
+                <[string8][Message][Controls.Magnetos1]>
                 <[tmvector2d][Range][ 0.0 3.0 ]>
                 <[float64][Value][3.0]>
                 <[string8][EventsUp][ SwitchSound.Trigger ]>
@@ -1236,7 +1241,7 @@
             <[sender][SenderAngleOfAttack][]
                 <[string8][Input][PitotTube.AngleOfAttack]>
                 <[string8][Message][Aircraft.AngleOfAttack]>
-            >	
+            >
             <[altimeter][Altimeter][]
                 <[string8][StaticPressure][PitotTube.StaticPressure]>
                 <[float64][AltimeterSetting][PressureSettingInput.Output]>
