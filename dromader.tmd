@@ -8,7 +8,7 @@
 	// Converted from FlightGear by Krzysztof Kaniewski
 	// Specification: http://www.polot.net/?p=b214
     //
-	// Date: Jan 2015 - Jul 2022
+	// Date: Jan 2015 - Aug 2022
     //
     //-------------------------------------
 
@@ -53,24 +53,14 @@
                 <[tmvector3d][R0][-0.638856 -1.379220 -0.487680]>
                 <[tmmatrix3d][B0][1.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 1.0]>
             >
-            <[jointlinear][JointFuselageRightWing][]
+            <[multibody_joint][JointFuselageRightWing][]
                 <[string8][Body0][Fuselage]>
                 <[string8][Body1][RightWing]>
                 <[tmvector3d][R0][ -0.065832 -0.5819 -0.487680 ]>
-                <[float64][Kfx][2000000.0]>
-                <[float64][Kfy][2000000.0]>
-                <[float64][Kfz][2000000.0]>
-                <[float64][Dfx][2520.0]>
-                <[float64][Dfy][2520.0]>
-                <[float64][Dfz][2520.0]>
-                <[float64][Ktx][826000.0]>
-                <[float64][Kty][8000000.0]>
-                <[float64][Ktz][8000000.0]>
-                <[float64][Dtx][1260.0]>
-                <[float64][Dty][1260.0]>
-                <[float64][Dtz][1260.0]>
-                <[float64][ForceMax][12600000.0]>
-                <[float64][TorqueMax][1260000.0]>
+                <[tmvector3d][X0][1.0 0.0 0.0]>
+                <[float64][Kp][15290000.0]>
+                <[float64][Kd][5580.8]>
+                <[uint32][Type][0]>
             >
             <[rigidbody][LeftWing][]
                 <[float64][Mass][126.4]>
@@ -78,24 +68,14 @@
                 <[tmvector3d][R0][-0.638856 1.379220 -0.487680]>
                 <[tmmatrix3d][B0][1.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 1.0]>
             >
-            <[jointlinear][JointFuselageLeftWing][]
+            <[multibody_joint][JointFuselageLeftWing][]
                 <[string8][Body0][Fuselage]>
                 <[string8][Body1][LeftWing]>
                 <[tmvector3d][R0][ -0.065832 0.5819 -0.487680 ]>
-                <[float64][Kfx][2000000.0]>
-                <[float64][Kfy][2000000.0]>
-                <[float64][Kfz][2000000.0]>
-                <[float64][Dfx][2520.0]>
-                <[float64][Dfy][2520.0]>
-                <[float64][Dfz][2520.0]>
-                <[float64][Ktx][826000.0]>
-                <[float64][Kty][8000000.0]>
-                <[float64][Ktz][8000000.0]>
-                <[float64][Dtx][1260.0]>
-                <[float64][Dty][1260.0]>
-                <[float64][Dtz][1260.0]>
-                <[float64][ForceMax][12600000.0]>
-                <[float64][TorqueMax][1260000.0]>
+                <[tmvector3d][X0][1.0 0.0 0.0]>
+                <[float64][Kp][15290000.0]>
+                <[float64][Kd][5580.8]>
+                <[uint32][Type][0]>
             >
             <[rigidbody][RightWing2][]
                 <[float64][Mass][111.6]>
@@ -107,8 +87,8 @@
                 <[string8][Body0][RightWing]>
                 <[string8][Body1][RightWing2]>
                 <[tmvector3d][X0][1.0 0.0 0.0]>
-                <[float64][Kp][529000.1]>
-                <[float64][Kd][2580.8]>
+                <[float64][Kp][15290000.0]>
+                <[float64][Kd][5580.8]>
                 <[tmvector3d][R0][ -0.065832 -2.758440 -0.487680 ]>
                 <[uint32][Type][0]>
             >
@@ -122,8 +102,8 @@
                 <[string8][Body0][LeftWing]>
                 <[string8][Body1][LeftWing2]>
                 <[tmvector3d][X0][1.0 0.0 0.0]>
-                <[float64][Kp][529000.1]>
-                <[float64][Kd][2580.8]>
+                <[float64][Kp][15290000.0]>
+                <[float64][Kd][5580.8]>
                 <[tmvector3d][R0][ -0.065832 2.758440 -0.487680 ]>
                 <[uint32][Type][0]>
             >
@@ -137,8 +117,8 @@
                 <[string8][Body0][RightWing2]>
                 <[string8][Body1][RightWing3]>
                 <[tmvector3d][X0][1.0 0.0 0.0]>
-                <[float64][Kp][529000.1]>
-                <[float64][Kd][2580.8]>
+                <[float64][Kp][15290000.0]>
+                <[float64][Kd][5580.8]>
                 <[tmvector3d][R0][ -0.065832 -5.178552 -0.216408 ]>
                 <[uint32][Type][0]>
             >
@@ -152,8 +132,8 @@
                 <[string8][Body0][LeftWing2]>
                 <[string8][Body1][LeftWing3]>
                 <[tmvector3d][X0][1.0 0.0 0.0]>
-                <[float64][Kp][529000.1]>
-                <[float64][Kd][2580.8]>
+                <[float64][Kp][15290000.0]>
+                <[float64][Kd][5580.8]>
                 <[tmvector3d][R0][ -0.065832 5.178552 -0.216408 ]>
                 <[uint32][Type][0]>
             >

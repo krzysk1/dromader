@@ -1,0 +1,52 @@
+<[file][][]
+    <[hints][][]
+        // PZL M-18 Dromader
+        <[float64][MaximumTakeOffMass][5300.0]>
+        <[float64][WingSpan][[17.7]>
+        <[float64][WingArea][40.00]>
+        <[float64][HeightOffset][-1.634]>
+        <[float64][ApproachSpeed][38.87]>
+        <[float64][PatternSpeed][45.0]>
+        <[float64][InitialClimbSpeed][32.0]>
+        <[copilot_flap_info_list][FlapInfo][]
+           <[copilot_flap_info][FlapUp][]
+              <[float64][FlapPosition][0.0]>
+              <[float64][MinimumSpeed][29.0]>
+              <[float64][OptimumSpeed][51.73]>
+              <[float64][MaximumSpeed][70.0]>
+              <[bool][TakeOff][true]>
+              <[bool][Landing][true]>
+           >
+           <[copilot_flap_info][FlapApproach][]
+              <[float64][FlapPosition][0.5]>
+              <[float64][MinimumSpeed][29.0]>
+              <[float64][OptimumSpeed][41.4]>
+              <[float64][MaximumSpeed][52.7]>
+              <[bool][TakeOff][true]>
+              <[bool][Landing][true]>
+           >
+           <[copilot_flap_info][FlapFull][]
+              <[float64][FlapPosition][1.0]>
+              <[float64][MinimumSpeed][29.0]>
+              <[float64][OptimumSpeed][36.29]>
+              <[float64][MaximumSpeed][42.7]>
+              <[bool][Landing][true]>
+           >
+        >
+        <[int][EngineCount][1]>
+        <[bool][Piston][true]>
+        <[bool][GeneralAviation][true]>
+        <[bool][ParkingBrake][true]>
+        <[bool][TailDragger][true]>
+        <[bool][RudderTrimRequired][true]>
+        <[float64][ElevatorGain][0.5]>
+        <[float64][AileronGain][1.0]>
+        <[float64][RudderCrossWind][1.1]>
+        <[float64][RudderTakeOff][0.07]>
+        <[float64][FlareHeightScaling][0.5]>
+        <[float64][FlareExpectedNoseDrop][0.45]>
+        <[float64][StarterMaximumTime][5.0]>
+        <[float64][RotationSpeedNormalizedClimb] [1.0]>
+        <[float64][RotationSpeedNormalizedCruise][0.923]>
+    >
+>
