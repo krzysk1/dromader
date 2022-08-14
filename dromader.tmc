@@ -3,7 +3,7 @@
         <[int][Version][220]>
         <[vec32array][ContactSpheres][ (-5.385 0.0 -0.554 0.208) (0.513 1.777 -1.634 0.419) (0.513 -1.777 -1.634 0.419) ]>
         <[string8][ICAO][M18]>
-        <[string8][DisplayName][PZL Dromader]>
+        <[string8][DisplayName][Dromader]>
         <[string8][DisplayNameFull][PZL-Mielec M18B Dromader]>
         <[localized_text_list][Descriptions][]
             <[localized_text][][]
