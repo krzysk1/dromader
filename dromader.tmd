@@ -2577,8 +2577,7 @@
                 <[uint32][OrientationID][Fuselage.Q]>
                 <[uint32][InputID][ServoHorizonOffset.Output]>
                 <[tmvector3d][Axis][0.0 0.0 1.0]>
-                <[float64][Scaling][0.0008]>
-//                 <[float64][Pos1][-0.0008]>
+                <[float64][Scaling][-0.0008]>
                 <[string8][InputIllumination0][InstrumentsLighting.Output]>
             >
             <[hingedbodygraphics][Agk47b_3d_cage_25][]
@@ -2944,8 +2943,8 @@
                 <[uint32][OrientationID][Fuselage.Q]>
                 <[uint32][InputID][AvionicsSwitch.Output]>
                 <[tmvector3d][Axis][-0.907673 0.243210 0.342020]>
-                <[float64][Scaling][0.002]>
-//                 <[float64][Pos1][-0.001]>
+                <[float64][Scaling][-0.0015]>
+                <[float64][Offset][0.0005]>
                 <[string8][InputIllumination0][InstrumentsLighting.Output]>
             >
             <[hingedbodygraphics][brakepress_Aguja1_4][]
