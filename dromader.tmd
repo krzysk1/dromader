@@ -9,7 +9,7 @@
 	// All resources are available here: https://github.com/FGMEMBERS/Dromader
 	// Specification: http://www.polot.net/?p=b214	
     //
-	// Date: Jan 2015 - Aug 2022
+	// Date: Jan 2015 - Aug 2022 - May 2023
     //
     //-------------------------------------
 
@@ -39,7 +39,40 @@
                 <[float64][Dt][0.02]>
                 <[bool][InCockpit][true]>
             >
-
+            <[camera][CameraGearView][]
+                <[string8][Body][Fuselage]>
+                <[tmvector3d][R0][ -5.93 1.2 0.01 ]>
+                <[tmvector3d][Direction][ 1.0 0.0 0.0 ]>
+                <[bool][InCockpit][false]>
+                <[string8][Tags][gear]>
+            >
+            <[camera][CameraStabilizer][]
+                <[string8][Body][Fuselage]>
+                <[tmvector3d][R0][ -6.96 0.0 4.15 ]>
+                <[tmvector3d][Direction][ 0.95 0.0 -0.3 ]>
+                <[float64][Cone][-0.1]>
+                <[bool][InCockpit][false]>
+                <[string8][Tags][tail stabilizer]>
+            >
+            <[camera][CameraLeftFuselageView][]
+                <[string8][Body][LeftWing]>
+                <[tmvector3d][R0][ -0.28 11.60 1.73 ]>
+                <[tmvector3d][X0][ 0.0 -1.0 0.0 ]>
+                <[tmvector3d][Direction][ 0.0 -1.0 -0.1 ]>
+                <[float64][Cone][0.0]>
+                <[bool][InCockpit][true]>
+                <[string8][Tags][fuselage wing left]>
+            >
+            <[camera][CameraRightFuselageView][]
+                <[string8][Body][RightWing]>
+                <[tmvector3d][R0][ -0.28 -11.60 1.73 ]>
+                <[tmvector3d][X0][ 0.0 1.0 0.0 ]>
+                <[tmvector3d][Direction][ 0.0 1.0 -0.1 ]>
+                <[float64][Cone][0.0]>
+                <[bool][InCockpit][true]>
+                <[string8][Tags][fuselage wing right]>
+            >
+			
             // Rigidbodies  mass: 2921.4 (-0.178 0.000 0.162)
 
             <[rigidbody][Fuselage][]
@@ -143,6 +176,7 @@
                 <[string8][Geometry][Fuselaje]>
                 <[float64][K][8576000.0]>
                 <[float64][D][85760]>
+                <[bool][InstantCrash][true]>
             >
             <[collisionhull][CollisionRightWing][]
                 <[string8][Body][RightWing]>
@@ -156,7 +190,34 @@
                 <[float64][K][1492000.0]>
                 <[float64][D][22380]>
             >
-
+            <[collisionhull][CollisionLeftElevator][]
+                <[string8][Body][Fuselage]>
+                <[string8][Geometry][Elevador01]>
+                <[float64][K][500000.0]>
+                <[float64][D][10000.0]>
+                <[float64][StaticFrictionCoefficient][2.0]>
+                <[float64][KineticFrictionCoefficient][0.7]>
+                <[bool][InstantCrash][true]>
+            >
+            <[collisionhull][CollisionRightElevator][]
+                <[string8][Body][Fuselage]>
+                <[string8][Geometry][Elevador02]>
+                <[float64][K][500000.0]>
+                <[float64][D][10000.0]>
+                <[float64][StaticFrictionCoefficient][2.0]>
+                <[float64][KineticFrictionCoefficient][0.7]>
+                <[bool][InstantCrash][true]>
+            >
+            <[collisionhull][CollisionRudder][]
+                <[string8][Body][Fuselage]>
+                <[string8][Geometry][Timon]>
+                <[float64][K][500000.0]>
+                <[float64][D][10000.0]>
+                <[float64][StaticFrictionCoefficient][2.0]>
+                <[float64][KineticFrictionCoefficient][0.7]>
+                <[bool][InstantCrash][true]>
+            >
+			
             // Gears
 
             <[rigidbody][TailGear][]
@@ -240,7 +301,6 @@
                 <[float64][D][178950]>
                 <[float64][StaticFrictionCoefficient][1.0]>
                 <[float64][KineticFrictionCoefficient][0.4]>
-                <[bool][Blade][false]>
             >
             <[collisionhull][CollisionLeftGear][]
                 <[string8][Body][LeftGear]>
@@ -249,7 +309,6 @@
                 <[float64][D][178950]>
                 <[float64][StaticFrictionCoefficient][1.0]>
                 <[float64][KineticFrictionCoefficient][0.4]>
-                <[bool][Blade][false]>
             >
             <[collisionhull][CollisionRightGear][]
                 <[string8][Body][RightGear]>
@@ -258,7 +317,6 @@
                 <[float64][D][178950]>
                 <[float64][StaticFrictionCoefficient][1.0]>
                 <[float64][KineticFrictionCoefficient][0.4]>
-                <[bool][Blade][false]>
             >
             <[wheel][TailWheelHull][]
                 <[float64][K][261200.0]>
@@ -3089,7 +3147,7 @@
                 <[string8][GeometryList][ PilotBody PilotHead ]>
                 <[uint32][PositionID][Fuselage.R]>
                 <[uint32][OrientationID][Fuselage.Q]>
-                <[uint32][ShowInside][0]>
+                <[uint32][ShowInside][CameraLeftFuselageView CameraRightFuselageView]>
                 <[bone_array][Bones][]
                  <[bone][element][0]
                      <[string8][Name][Bip01]>
@@ -5121,6 +5179,7 @@
                 <[uint32][VelocityID][Fuselage.V]>
                 <[string8][SoundFile][prop1_inn.wav]>
                 <[bool][External][false]>
+                <[tmvector3d][R0][2.3 0.0 0.0]>				
             >
             <[soundloop][RPMWindLoopExt][]
                 <[string8][InputVolume][RPMVolumeWind.Output]>
@@ -5129,6 +5188,7 @@
                 <[uint32][VelocityID][Fuselage.V]>
                 <[string8][SoundFile][prop1_out.wav]>
                 <[bool][Internal][false]>
+                <[tmvector3d][R0][2.3 0.0 0.0]>					
             >
 
             // starter cranking
@@ -5151,6 +5211,7 @@
                 <[uint32][VelocityID][Fuselage.V]>
                 <[string8][SoundFile][engstart.wav]>
                 <[bool][External][false]>
+                <[tmvector3d][R0][2.1 0.0 0.0]>					
             >
             <[sound_multi][IgnitionSoundExt][]
                 <[string8][InputTrigger][IgnitionSoundInput.Output]>
@@ -5160,6 +5221,7 @@
                 <[uint32][VelocityID][Fuselage.V]>
                 <[string8][SoundFile][engstart.wav]>
                 <[bool][Internal][false]>
+                <[tmvector3d][R0][2.1 0.0 0.0]>					
             >
 
             // engine loop
@@ -5188,6 +5250,7 @@
                 <[uint32][PositionID][Fuselage.R]>
                 <[uint32][VelocityID][Fuselage.V]>
                 <[string8][SoundFile][engine_idle.wav]>
+                <[tmvector3d][R0][2.1 0.0 0.0]>				
             >
             <[soundloop][RPMRunLoopInt][]
                 <[string8][InputVolume][RPMVolumeRun.Output]>
@@ -5196,6 +5259,7 @@
                 <[uint32][VelocityID][Fuselage.V]>
                 <[string8][SoundFile][engine_int.wav]>
                 <[bool][External][false]>
+                <[tmvector3d][R0][2.1 0.0 0.0]>					
             >
             <[soundloop][RPMRunLoopExt][]
                 <[string8][InputVolume][RPMVolumeRun.Output]>
@@ -5204,6 +5268,7 @@
                 <[uint32][VelocityID][Fuselage.V]>
                 <[string8][SoundFile][engine_ext.wav]>
                 <[bool][Internal][false]>
+                <[tmvector3d][R0][2.1 0.0 0.0]>					
             >
 
             // wheels
