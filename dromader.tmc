@@ -1,18 +1,22 @@
 ﻿<[file][][]
-    <[object][][]
-        <[int][Version][220]>
-        <[vec32array][ContactSpheres][ (-5.385 0.0 -0.554 0.208) (0.513 1.777 -1.634 0.419) (0.513 -1.777 -1.634 0.419) ]>
-        <[string8][ICAO][M18]>
+    <[modelinformation][][]
+        <[int32][Version][220]>
+        <[list_vector4_float64][ContactSpheres][ (-5.385 0.0 -0.554 0.208) (0.513 1.777 -1.634 0.419) (0.513 -1.777 -1.634 0.419) ]>
+        <[stringt8c][ICAO][M18]>
         <[string8][DisplayName][PZL Dromader]>
         <[string8][DisplayNameFull][PZL-Mielec M18B Dromader]>
-        <[localized_text_list][Descriptions][]
-            <[localized_text][][]
+        <[list_localized_text][Descriptions][]
+            <[localized_text][element][0]
                 <[string8][Language][en]>
                 <[string8][Text][The PZL-Mielec M-18 Dromader is a popular agricultural aircraft, developed in middle 1970's in Poland by PZL. Dromaders are capable to make crop dusting and firefighting operations, carrying chemicals or water in a big frontal hopper. Original 3D model created by Pavel Cueto, Fernando Espinosa.]>
 			>
-            <[localized_text][][]
+            <[localized_text][element][1]
                 <[string8][Language][de]>
                 <[string8][Text][Die PZL M-18 Dromader ist ein Agrarflugzeug des polnischen Flugzeugherstellers PZL. Konvertiert von FlightGear durch Krzysztof Kaniewski. 3d-Modell erstellt von Pavel Cueto, Fernando Espinosa.]>
+			>
+            <[localized_text][element][2]
+                <[string8][Language][pl]>
+                <[string8][Text][PZL-Mielec M-18 Dromader to popularny samolot rolniczy, opracowany w połowie lat siedemdziesiątych w Polsce przez PZL. Dromadery są zdolne do opylania upraw i gaszenia pożarów, przenosząc chemikalia lub wodę w dużym przednim zbiorniku. Oryginalny model 3D stworzony przez Pavel Cueto, Fernando Espinosa.]>
 			>
         >
 		<[float64][WingSpan][17.7]>
@@ -22,9 +26,6 @@
         <[float64][ApproachAirspeed][33.3]>
         <[float64][CruiseAirspeed][55.6]>
         <[float64][CruiseSpeed][75.6]>
-		<[tmvector2d][NormalAirspeedRange][ 29.5 59.0 ]>
-		<[tmvector2d][CautionAirspeedRange][ 59.0 75.5 ]>
-		<[tmvector2d][FlapAirspeedRange][ 29.5 49.0 ]>
         <[float64][MaximumAltitude][6500.0]>
         <[float64][CruiseAltitude][1826.0]>
         <[float64][MaximumTakeoffMass][5300.0]>
@@ -33,6 +34,9 @@
         <[uint][UnitsBuilt][759]>
         <[uint][EngineCount][1]>
         <[uint][Year][1978]>
+		<[tmvector2d][NormalAirspeedRange][ 29.5 59.0 ]>
+		<[tmvector2d][CautionAirspeedRange][ 59.0 75.5 ]>
+		<[tmvector2d][FlapAirspeedRange][ 29.5 49.0 ]>
         <[tmvector2d][FlapSettings][ (0.0 0.0) (0.5 0.261799) (1.0 0.523599) ]>
         <[string8][FlapQualifier][]>
         <[string8][Tags][ airplane general_aviation piston gear taildragger flaps ]>
