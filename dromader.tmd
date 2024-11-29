@@ -4,10 +4,10 @@
     //
 	// Plane: PZL M-18 Dromader for Aerofly FS4
     //
-	// Converted from FlightGear by Krzysztof Kaniewski	
+	// Converted from FlightGear by Krzysztof Kaniewski
 	// Original 3D model: Pavel Cueto, Fernando Espinosa, thanks to him
 	// All resources are available here: https://github.com/FGMEMBERS/Dromader
-	// Specification: http://www.polot.net/?p=b214	
+	// Specification: http://www.polot.net/?p=b214
     //
 	// Date: Jan 2015 - Aug 2022 - May 2023
     //
@@ -24,6 +24,7 @@
             // Cameras
 
             <[camera][CameraFollow][]
+                <[string8][Description][Behind aircraft]>
                 <[string8][Body][Fuselage]>
                 <[tmvector3d][R0][ -9.6 0.0 4.2 ]>
                 <[tmvector3d][Direction][ 0.8709 0.0 -0.4914 ]>
@@ -31,7 +32,7 @@
             <[camera_head][CameraPilot][]
                 <[string8][Tags][cockpit pilot]>
                 <[string8][Body][Fuselage]>
-                <[tmvector3d][R0][-2.23 0.0 1.53]>
+                <[tmvector3d][R0][-2.18 0.0 1.48]>
                 <[tmvector3d][Direction][0.9659 0.0 -0.2588]>
                 <[float64][Kf][40.0]>
                 <[float64][Df][1.0]>
@@ -72,7 +73,7 @@
                 <[bool][InCockpit][true]>
                 <[string8][Tags][fuselage wing right]>
             >
-			
+
             // Rigidbodies  mass: 2921.4 (-0.178 0.000 0.162)
 
             <[rigidbody][Fuselage][]
@@ -217,7 +218,7 @@
                 <[float64][KineticFrictionCoefficient][0.7]>
                 <[bool][InstantCrash][true]>
             >
-			
+
             // Gears
 
             <[rigidbody][TailGear][]
@@ -2665,15 +2666,15 @@
             >
             <[graphics_input][Wr10u_Aguja_4Input][]
                 <[uint32][InputID][VerticalSpeedIndicatorNeedle.Output]>
-                <[float64][Scaling][196.848]>
+                <[float64][Scaling][1.96848]>
             >
             <[graphics_linear_interpolation][Wr10u_Aguja_4Mapping][]
                 <[string8][Input][Wr10u_Aguja_4Input.Output]>
-                <[tmvector2d][Map][(-2000 -3.106686)
-									(-1000 -1.570796)
+                <[tmvector2d][Map][(-20 -3.106686)
+									(-10 -1.570796)
 									(0 0.0)
-									(1000 1.570796)
-									(2000 3.106686)]>
+									(10 1.570796)
+									(20 3.106686)]>
             >
             <[hingedbodygraphics][Wr10u_Aguja_4][]
                 <[string8][GeometryList][ Wr10uBAguja ]>
@@ -5179,7 +5180,7 @@
                 <[uint32][VelocityID][Fuselage.V]>
                 <[string8][SoundFile][prop1_inn.wav]>
                 <[bool][External][false]>
-                <[tmvector3d][R0][2.3 0.0 0.0]>				
+                <[tmvector3d][R0][2.3 0.0 0.0]>
             >
             <[soundloop][RPMWindLoopExt][]
                 <[string8][InputVolume][RPMVolumeWind.Output]>
@@ -5188,7 +5189,7 @@
                 <[uint32][VelocityID][Fuselage.V]>
                 <[string8][SoundFile][prop1_out.wav]>
                 <[bool][Internal][false]>
-                <[tmvector3d][R0][2.3 0.0 0.0]>					
+                <[tmvector3d][R0][2.3 0.0 0.0]>
             >
 
             // starter cranking
@@ -5211,7 +5212,7 @@
                 <[uint32][VelocityID][Fuselage.V]>
                 <[string8][SoundFile][engstart.wav]>
                 <[bool][External][false]>
-                <[tmvector3d][R0][2.1 0.0 0.0]>					
+                <[tmvector3d][R0][2.1 0.0 0.0]>
             >
             <[sound_multi][IgnitionSoundExt][]
                 <[string8][InputTrigger][IgnitionSoundInput.Output]>
@@ -5221,7 +5222,7 @@
                 <[uint32][VelocityID][Fuselage.V]>
                 <[string8][SoundFile][engstart.wav]>
                 <[bool][Internal][false]>
-                <[tmvector3d][R0][2.1 0.0 0.0]>					
+                <[tmvector3d][R0][2.1 0.0 0.0]>
             >
 
             // engine loop
@@ -5250,7 +5251,7 @@
                 <[uint32][PositionID][Fuselage.R]>
                 <[uint32][VelocityID][Fuselage.V]>
                 <[string8][SoundFile][engine_idle.wav]>
-                <[tmvector3d][R0][2.1 0.0 0.0]>				
+                <[tmvector3d][R0][2.1 0.0 0.0]>
             >
             <[soundloop][RPMRunLoopInt][]
                 <[string8][InputVolume][RPMVolumeRun.Output]>
@@ -5259,7 +5260,7 @@
                 <[uint32][VelocityID][Fuselage.V]>
                 <[string8][SoundFile][engine_int.wav]>
                 <[bool][External][false]>
-                <[tmvector3d][R0][2.1 0.0 0.0]>					
+                <[tmvector3d][R0][2.1 0.0 0.0]>
             >
             <[soundloop][RPMRunLoopExt][]
                 <[string8][InputVolume][RPMVolumeRun.Output]>
@@ -5268,7 +5269,7 @@
                 <[uint32][VelocityID][Fuselage.V]>
                 <[string8][SoundFile][engine_ext.wav]>
                 <[bool][Internal][false]>
-                <[tmvector3d][R0][2.1 0.0 0.0]>					
+                <[tmvector3d][R0][2.1 0.0 0.0]>
             >
 
             // wheels

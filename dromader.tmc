@@ -39,7 +39,7 @@
 		<[vector2_float64][FlapAirspeedRange][ 29.5 49.0 ]>
         <[list_vector2_float64][FlapSettings][ (0.0 0.0) (0.5 0.261799) (1.0 0.523599) ]>
         <[string8][FlapQualifier][]>
-        <[string8][Tags][ airplane general_aviation piston gear taildragger flaps ]>
+        <[string8][Tags][ airplane general_aviation piston gear tailgear flaps ]>
 		<[string8][Pilot][pilot_peter]>
     >
 >
