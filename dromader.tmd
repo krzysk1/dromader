@@ -9,7 +9,7 @@
 	// All resources are available here: https://github.com/FGMEMBERS/Dromader
 	// Specification: http://www.polot.net/?p=b214
     //
-	// Date: Jan 2015 - Aug 2022 - May 2023
+	// Date: Jan 2015 - Aug 2022 - May 2023 - Dec 2024
     //
     //-------------------------------------
 
@@ -24,7 +24,6 @@
             // Cameras
 
             <[camera][CameraFollow][]
-                <[string8][Description][Behind aircraft]>
                 <[string8][Body][Fuselage]>
                 <[tmvector3d][R0][ -9.6 0.0 4.2 ]>
                 <[tmvector3d][Direction][ 0.8709 0.0 -0.4914 ]>
@@ -414,10 +413,11 @@
                 <[float64][StallRange][0.174533]>
                 <[float64][AttachedCenterFlap][-0.12]>
             >
+			// Wing sections NACA 4416 at root, NACA 4412 at end of centre-section and on outer panels; incidence 6°.
             <[airfoil][AirfoilRoot][] //NACA 4416
-                <[float64][Cl0][0.15]>
-                <[float64][Cd0][0.006]>
-                <[float64][Cm0][-0.012]>
+                <[float64][Cl0][0.5]>
+                <[float64][Cd0][0.00678]>
+                <[float64][Cm0][-0.1032]>
                 <[float64][ClAlpha][6.016057]>
                 <[float64][CdAlpha][0.744845]>
                 <[float64][CmAlpha][0.0]>
@@ -434,10 +434,10 @@
                 <[float64][StallRange][0.139626]>
                 <[float64][AttachedCenterFlap][-0.12]>
             >
-            <[airfoil][AirfoilMid][]
-                <[float64][Cl0][0.15]>
-                <[float64][Cd0][0.006]>
-                <[float64][Cm0][-0.012]>
+            <[airfoil][AirfoilMid][]	//NACA 4412
+                <[float64][Cl0][0.4833]>
+                <[float64][Cd0][0.00678]>
+                <[float64][Cm0][-0.1032]>
                 <[float64][ClAlpha][6.016057]>
                 <[float64][CdAlpha][0.744845]>
                 <[float64][CmAlpha][0.0]>
@@ -455,9 +455,9 @@
                 <[float64][AttachedCenterFlap][-0.12]>
             >
             <[airfoil][AirfoilTip][] //NACA 4412
-                <[float64][Cl0][0.15]>
-                <[float64][Cd0][0.006]>
-                <[float64][Cm0][-0.012]>
+                <[float64][Cl0][0.4833]>
+                <[float64][Cd0][0.00678]>
+                <[float64][Cm0][-0.1032]>
                 <[float64][ClAlpha][6.016057]>
                 <[float64][CdAlpha][0.744845]>
                 <[float64][CmAlpha][0.0]>
@@ -487,7 +487,7 @@
                 <[float64array][StationLE]          [ 0.50719 0.50719 0.50719 ]>
                 <[float64array][StationTE]          [ -1.78490 -1.78490 -1.78490 ]>
                 <[float64array][StationZ]           [ -0.48768 -0.48768 -0.48768 ]>
-                <[float64array][StationIncidence]   [ 0.03491 0.03491 0.03491 ]>
+                <[float64array][StationIncidence]   [ 0.10472 0.10472 0.10472 ]>
                 <[uint32array][StationFlap]         [ 1 0 0 ]>
                 <[float64array][StationFlapFraction][ 0.22 0.0 0.0 ]>
                 <[float64][AspectRatioMultiplier][6.0]>
@@ -511,7 +511,7 @@
                 <[float64array][StationLE]          [ 0.50719 0.50719 0.50719 ]>
                 <[float64array][StationTE]          [ -1.78490 -1.78490 -1.78490 ]>
                 <[float64array][StationZ]           [ -0.48768 -0.48768 -0.48768 ]>
-                <[float64array][StationIncidence]   [ 0.03491 0.03491 0.03491 ]>
+                <[float64array][StationIncidence]   [ 0.10472 0.10472 0.10472 ]>
                 <[uint32array][StationFlap]         [ 0 1 0 ]>
                 <[float64array][StationFlapFraction][ 0.0 0.22 0.0 ]>
                 <[float64][AspectRatioMultiplier][6.0]>
@@ -535,7 +535,7 @@
                 <[float64array][StationLE]          [ 0.50719 0.50719 ]>
                 <[float64array][StationTE]          [ -1.78490 -1.78490 ]>
                 <[float64array][StationZ]           [ -0.21621 -0.48768 ]>
-                <[float64array][StationIncidence]   [ 0.01745 0.03491 ]>
+                <[float64array][StationIncidence]   [ 0.10472 0.10472 ]>
                 <[uint32array][StationFlap]         [ 1 0 ]>
                 <[float64array][StationFlapFraction][ 0.22 0.0 ]>
                 <[float64][AspectRatioMultiplier][6.0]>
@@ -559,7 +559,7 @@
                 <[float64array][StationLE]          [ 0.50719 0.50719 ]>
                 <[float64array][StationTE]          [ -1.78490 -1.78490 ]>
                 <[float64array][StationZ]           [ -0.48768 -0.21621 ]>
-                <[float64array][StationIncidence]   [ 0.03491 0.01745 ]>
+                <[float64array][StationIncidence]   [ 0.10472 0.10472 ]>
                 <[uint32array][StationFlap]         [ 1 0 ]>
                 <[float64array][StationFlapFraction][ 0.22 0.0 ]>
                 <[float64][AspectRatioMultiplier][6.0]>
@@ -583,7 +583,7 @@
                 <[float64array][StationLE]          [ 0.34222 0.50719 0.50719 ]>
                 <[float64array][StationTE]          [ -1.19702 -1.78490 -1.78490 ]>
                 <[float64array][StationZ]           [ 0.19088 0.11146 -0.21641 ]>
-                <[float64array][StationIncidence]   [ 0.0 0.0 0.01745 ]>
+                <[float64array][StationIncidence]   [ 0.0 0.10472 0.10472 ]>
                 <[uint32array][StationFlap]         [ 0 1 0 ]>
                 <[float64array][StationFlapFraction][ 0.0 0.32 0.0 ]>
                 <[float64][AspectRatioMultiplier][6.0]>
@@ -607,7 +607,7 @@
                 <[float64array][StationLE]          [ 0.50719 0.50719 0.34222 ]>
                 <[float64array][StationTE]          [ -1.78490 -1.78490 -1.19702 ]>
                 <[float64array][StationZ]           [ -0.21641 0.11146 0.19088 ]>
-                <[float64array][StationIncidence]   [ 0.01745 0.0 0.0 ]>
+                <[float64array][StationIncidence]   [ 0.10472 0.10472 0.0 ]>
                 <[uint32array][StationFlap]         [ 1 0 0 ]>
                 <[float64array][StationFlapFraction][ 0.32 0.0 0.0 ]>
                 <[float64][AspectRatioMultiplier][6.0]>
