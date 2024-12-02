@@ -31,7 +31,7 @@
             <[camera_head][CameraPilot][]
                 <[string8][Tags][cockpit pilot]>
                 <[string8][Body][Fuselage]>
-                <[tmvector3d][R0][-2.18 0.0 1.48]>
+                <[tmvector3d][R0][-2.18 0.0 1.45]>
                 <[tmvector3d][Direction][0.9659 0.0 -0.2588]>
                 <[float64][Kf][40.0]>
                 <[float64][Df][1.0]>
@@ -1232,7 +1232,7 @@
                 <[float64][InputTemperature] [EngineHousing.Output]>
                 <[float64][AddHeat]          [EngineHousing.AddHeat]>
                 <[float64][RotationInertia][1.776]>
-                <[float64][ThrottleIdle][0.07]>
+                <[float64][ThrottleIdle][0.12]>
                 <[float64][Friction][70.0]>
                 <[float64][RatedRotationSpeed][220.0]>
                 <[float64][RatedPower][721090]>
