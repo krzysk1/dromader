@@ -19,12 +19,12 @@
                 <[string8][Text][PZL-Mielec M-18 Dromader to popularny samolot rolniczy, opracowany w połowie lat siedemdziesiątych w Polsce przez PZL. Dromadery są zdolne do opylania upraw i gaszenia pożarów, przenosząc chemikalia lub wodę w dużym przednim zbiorniku. Oryginalny model 3D stworzony przez Pavel Cueto, Fernando Espinosa.]>
             >
         >
-        <[float64][MaximumTakeoffMass][5300.0]>        
+        <[float64][MaximumTakeoffMass][5300.0]>
         <[float64][WingSpan]          [17.7]>
-        <[uint32] [Year]              [1978]>        
+        <[uint32] [Year]              [1978]>
         <[uint32] [UnitsBuilt]        [759]>
         <[uint32] [EngineCount]       [1]>
-        <[float64][EnginePower]       [746000.0]>         
+        <[float64][EnginePower]       [746000.0]>
         <[float64][MaximumAirspeed]   [62.0]>
         <[float64][MaximumSpeed]      [62.0]>
         <[float64][MinimumAirspeed]   [29.5]>
@@ -34,7 +34,7 @@
         <[float64][MaximumAltitude]   [6500.0]>
         <[float64][CruiseAltitude]    [1826.0]>
         <[float64][MaximumRange]      [970000.0]>
-        <[vector2_float64][FlapAirspeedRange]   [ 29.5 49.0 ]>        
+        <[vector2_float64][FlapAirspeedRange]   [ 29.5 49.0 ]>
         <[vector2_float64][NormalAirspeedRange] [ 29.5 59.0 ]>
         <[vector2_float64][CautionAirspeedRange][ 59.0 75.5 ]>
         <[list_vector2_float64][FlapSettings][ (0.0 0.0) (0.5 0.261799) (1.0 0.523599) ]>
