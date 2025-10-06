@@ -15,6 +15,18 @@
                 <[string8][Text][Die PZL M-18 Dromader ist ein Agrarflugzeug des polnischen Flugzeugherstellers PZL. Konvertiert von FlightGear durch Krzysztof Kaniewski. 3d-Modell erstellt von Pavel Cueto, Fernando Espinosa.]>
             >
             <[localized_text][element][2]
+                <[string8u][Language][fr]>
+                <[string8][Text][Le PZL-Mielec M-18 Dromader est un avion agricole très populaire, développé au milieu des années 1970 en Pologne par PZL. Les Dromaders sont capables d'effectuer des opérations d'épandage et de lutte contre les incendies, en transportant des produits chimiques ou de l'eau dans une grande trémie frontale. Modèle 3D original créé par Pavel Cueto et Fernando Espinosa.]>
+			>
+            <[localized_text][element][3]
+                <[string8u][Language][es]>
+                <[string8][Text][El PZL-Mielec M-18 Dromader es un popular avión agrícola, desarrollado a mediados de la década de 1970 en Polonia por PZL. Los Dromader son capaces de realizar operaciones de fumigación de cultivos y extinción de incendios, transportando productos químicos o agua en una gran tolva frontal. Modelo 3D original creado por Pavel Cueto y Fernando Espinosa.]>
+			>
+            <[localized_text][element][4]
+                <[string8u][Language][it]>
+                <[string8][Text][Il PZL-Mielec M-18 Dromader è un popolare velivolo agricolo, sviluppato nella metà degli anni '70 in Polonia dalla PZL. I Dromader sono in grado di effettuare operazioni di irrorazione dei campi e di spegnimento incendi, trasportando prodotti chimici o acqua in una grande tramoggia frontale. Modello 3D originale creato da Pavel Cueto, Fernando Espinosa.]>
+			>
+            <[localized_text][element][5]
                 <[string8u][Language][pl]>
                 <[string8][Text][PZL-Mielec M-18 Dromader to popularny samolot rolniczy, opracowany w połowie lat siedemdziesiątych w Polsce przez PZL. Dromadery są zdolne do opylania upraw i gaszenia pożarów, przenosząc chemikalia lub wodę w dużym przednim zbiorniku. Oryginalny model 3D stworzony przez Pavel Cueto, Fernando Espinosa.]>
             >
